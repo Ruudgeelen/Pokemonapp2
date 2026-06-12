@@ -66,8 +66,14 @@ const displayedPokemons = computed(() => {
 
     return source.slice(0, visibleCount.value);
 });
-const loadMore = () => {
+const loadMore20 = () => {
     visibleCount.value += 20;
+};
+const loadMore50 = () => {
+    visibleCount.value += 50;
+};
+const loadMore100000 = () => {
+    visibleCount.value += 100000;
 };
 const hasMorePokemons = computed(() => {
     const total = showFavoritePokemons.value
@@ -315,7 +321,7 @@ window.addEventListener("load", () => {
 <div class="pokedex-grid">
       <h1 v-if="displayedPokemons.length === 0">Geen Pokémon gevonden</h1>
 <div class="mdc-card" v-for="pokemon in displayedPokemons" :key="pokemon.name">
-    <div class="mdc-card__primary-action">
+    <div class="mdc-card__primary-action" >
       <div class="mdc-card__media">
         <img class="pokemon-image" :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.url.split('/')[6]}.png`" :alt="pokemon.name">
       </div>
@@ -423,9 +429,21 @@ window.addEventListener("load", () => {
 </section>
     </div>
     <div class="load-more-container" v-if="hasMorePokemons && displayedPokemons.length >= visibleCount">
-    <button class="mdc-button mdc-button--raised" @click="loadMore" >
+    <button class="mdc-button mdc-button--raised" @click="loadMore20" >
         <span class="mdc-button__label">
-            Laad 20 meer Pokémon
+             +20
+        </span>
+    </button>
+      <span style="margin: 0 12px; font-weight: 500;"></span>
+        <button class="mdc-button mdc-button--raised" @click="loadMore50" >
+        <span class="mdc-button__label">
+            +50
+        </span>
+    </button>
+          <span style="margin: 0 12px; font-weight: 500;"></span>
+        <button class="mdc-button mdc-button--raised" @click="loadMore100000" >
+        <span class="mdc-button__label">
+            All
         </span>
     </button>
 </div>
