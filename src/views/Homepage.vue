@@ -299,8 +299,11 @@ window.addEventListener("load", () => {
   <div class="mdc-top-app-bar__row">
     <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
         <RouterLink to="/home">
-      <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation home">Home</button>
-      </RouterLink> 
+          <button
+            class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button"
+            aria-label="Open navigation home"
+          >home</button>
+        </RouterLink>
       <span class="mdc-top-app-bar__title">Pokedex</span>
     </section>
 <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
